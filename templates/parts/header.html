@@ -32,6 +32,9 @@
             </div>
 
             <div class="header__bottom">
+                    <a href="{% url 'home' %}" class="header__logo--mobile">
+                        <img src="{% static 'images/logo-dark.png' %}" alt="estetico logo" class="header__img">
+                    </a>
                 <nav class="header__nav" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                     <ul class="header__list" itemprop="about" itemscope="" itemtype="http://schema.org/ItemList">
                         <li class="header__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList">
@@ -79,3 +82,11 @@
         </div>
     </div>
 </header>
+
+<div class="toggle-menu" id="menu">
+    <div class="toggle-section">
+        <a href="#" class="menu-btn">
+            <span></span>
+        </a>
+    </div>
+</div>

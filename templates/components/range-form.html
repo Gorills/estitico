@@ -7,7 +7,8 @@
 
     <div class="range-form__wrap">
         <p class="range-form__subtitle">Мой возраст</p>
-        <input class="range-form__old" type="text" name="" id="output" />
+        <p id="output" class="range-form__old"></p>
+        
         
     </div>
     <div class="range-form__range">
@@ -140,3 +141,16 @@
     
 
 </div>
+
+<script>
+let onChange = function(){
+	let range = document.getElementById('range');
+	
+	document.getElementById('output').innerHTML = range.value;
+}
+document.getElementById('range').addEventListener('input', function(){		
+	onChange();
+});	
+onChange();
+
+</script>
