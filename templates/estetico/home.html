@@ -1,0 +1,192 @@
+
+{% extends 'base.html' %}
+
+{% block title %}  {% endblock %}
+{% block description %} {% endblock %}
+{% block keywords %}  {% endblock %}
+{% block canonical %} {% endblock %}
+{% block og:title %}{% endblock %}
+{% block og:description %} {% endblock %}
+{% block og:url %}  {% endblock %}
+{% block twitter:title %}{% endblock %}
+{% block twitter:description %}{% endblock %}
+{% block vk:image %}{% endblock %}
+{% block og:image %}{% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+<section class="start">
+    <div class="container">
+        <div class="start__inner">
+            <div class="start__wrapper">
+                <h1 class="start__title">
+                <strong>СТУДИЯ КОРРЕКЦИИ ФИГУРЫ</strong> — ESTETICO
+                </h1>
+                <p class="start__text">Мы используем инновационное оборудование для вашего максимального комфорта и эффективности процедур</p>
+            </div>
+
+            <div class="start__sale">
+                <div class="start__sale-item">
+                    Акция
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'images/start.png' %}" alt="" class="start__img">
+</section>
+
+<section class="services">
+    <div class="container">
+        <div class="services__inner">
+            <h2 class="title services__title">Услуги салонов</h2>
+            <div class="services__wrapper">
+                <div class="services__left">
+                
+                    <div class="services__item">
+                        <a href="#" class="services__item-big">
+                            <img src="{% static 'images/1.png' %}" alt="" class="services__img">
+                            <p class="services__item-text">LPG - массаж на аппарате VORTEX</p>
+                        </a>
+
+                        <div class="services__item-wrap services__item-wrap--right">
+                            <a href="#" class="services__item-little">
+                                <img src="{% static 'images/2.png' %}" alt="" class="services__img">
+                                <p class="services__item-text">LPG-массаж для лица</p>
+                            </a>
+                            <a href="#" class="services__item-little">
+                                <img src="{% static 'images/3.png' %}" alt="" class="services__img">
+                                <p class="services__item-text">Лазерная эпиляция</p>
+                            </a>
+                        </div>
+                    
+                    </div>
+                    <div class="services__item">
+
+                        <div class="services__item-wrap services__item-wrap--left">
+                            <a href="#" class="services__item-little">
+                                <img src="{% static 'images/4.png' %}" alt="" class="services__img">
+                                <p class="services__item-text">Кавитация</p>
+                            </a>
+                            <a href="#" class="services__item-little">
+                                <img src="{% static 'images/5.png' %}" alt="" class="services__img">
+                                <p class="services__item-text">Прессотерапия</p>
+                            </a>
+                        </div>
+                        <a href="#" class="services__item-big">
+                            <img src="{% static 'images/6.png' %}" alt="" class="services__img">
+                            <p class="services__item-text">Уход за лицом</p>
+                        </a>
+
+                    
+                    </div>
+                
+                </div>
+                <div class="services__right">
+                
+                    <div class="services__form">
+                        
+                        {% include 'components/range-form.html' %}
+
+
+
+                    
+                    </div>
+                    <div class="services__rec">
+                        <div class="services__spec">
+                            <img src="{% static 'images/spec.png' %}" alt="" class="services__rec-img">
+                            <p class="services__rec-title">Мнение специалиста</p>
+                        </div>
+                        <p class="services__rec-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita veritatis exercitationem accusamus. Vitae quae, sunt dicta delectus nemo ex dolorum commodi veniam, ad tempora, nihil placeat dolorem laudantium officia molestias!         
+                                 
+                        </p>
+                        <p class="services__rec-it">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae officia ullam exercitationem. Aliquam ea doloribus et rerum ratione veritatis. At explicabo omnis vero impedit eligendi, asperiores unde iure ratione totam.
+                        
+                        </p>
+                    </div>
+                
+                
+                </div>
+            </div>
+
+
+            <a href="#" class="btn btn__empty services__btn">Все услуги</a>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+{% include 'components/spec.html' %}
+
+
+{% include 'components/our-command.html' %} 
+
+{% include 'components/rewiew.html'  %}
+
+{% include 'components/branch.html'  %}
+
+<div class="estetico">
+    <div class="container">
+        <div class="estetico__inner">
+
+            <p class="estetico__title">ESTETICO <span class="estetico__title--bold">— это...</div></span>
+            <div class="estetico__wrap">
+                <p class="estetico__desc">
+                Московские салоны коррекции фигуры. Забудьте про изнуряющие тренировки и опасные диеты с новыми аппаратными методиками! Мы используем инновационное оборудование для вашего максимального комфорта и эффективности процедур.
+                
+                </p>
+                
+                <div class="estetico__circle-wrap">
+                    <div class="estetico__circle">
+                        Подробнее
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="blog-home">
+    <div class="container">
+        <div class="blog-home__inner">
+            <div class="blog-home__item">
+                <img src="{% static 'images/blog-home/blog1.png' %}" alt="" class="blog-home__img">
+                <div class="blog-home__date">07.05.2021</div>
+                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
+                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
+            </div>
+            <div class="blog-home__item">
+                <img src="{% static 'images/blog-home/blog2.png' %}" alt="" class="blog-home__img">
+                <div class="blog-home__date">07.05.2021</div>
+                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
+                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
+            </div>
+            <div class="blog-home__item">
+                <img src="{% static 'images/blog-home/blog3.png' %}" alt="" class="blog-home__img">
+                <div class="blog-home__date">07.05.2021</div>
+                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
+                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
+            </div>
+            <div class="blog-home__item">
+                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
+                <div class="blog-home__date">07.05.2021</div>
+                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
+                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

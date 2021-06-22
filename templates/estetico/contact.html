@@ -1,0 +1,92 @@
+
+{% extends 'base.html' %}
+
+{% block title %}  {% endblock %}
+{% block description %} {% endblock %}
+{% block keywords %}  {% endblock %}
+{% block canonical %} {% endblock %}
+{% block og:title %}{% endblock %}
+{% block og:description %} {% endblock %}
+{% block og:url %}  {% endblock %}
+{% block twitter:title %}{% endblock %}
+{% block twitter:description %}{% endblock %}
+{% block vk:image %}{% endblock %}
+{% block og:image %}{% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+<section class="start">
+    <div class="container">
+        <div class="start__inner">
+            <div class="start__wrapper">
+                <h1 class="start__title">
+                <strong>Контактная информация</strong>
+                </h1>
+                <p class="start__text">Мы используем инновационное оборудование для вашего максимального комфорта и эффективности процедур</p>
+            </div>
+
+            <div class="start__sale">
+                <div class="start__sale-item">
+                    Акция
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'images/contacts.jpg' %}" alt="" class="start__img">
+</section>
+
+
+<section class="contacts">
+    <div class="container">
+        <div class="contacts__inner">
+            <div class="contacts__top">
+                <div class="contacts__column">
+                    <p class="contacts__top-text">Ждём Вашего звонка по телефонам:</p>
+                      
+
+                </div>
+                <div class="contacts__column">
+                    <a href="tel:+79161957378" class="contacts__link">+7 916 195 73 78</a>    
+                    <a href="tel:+79855350520" class="contacts__link">+7 985 535 05 20</a>                                                 
+                
+                </div>
+                <div class="contacts__column">
+                    <p class="contacts__top-text">Напишите нам:</p>
+                
+                </div>
+                <div class="contacts__column">
+                    <a href="mailto:info@estetico.ru" class="contacts__link">info@estetico.ru</a>
+
+                </div>
+            
+            </div>
+
+            <div class="contacts__bottom">
+                <h2 class="title">Наши филиалы</h2>
+                
+                <div class="contacts__bottom-tabs">
+                
+                    
+                
+                
+                
+                </div>
+            
+            
+            
+
+            </div>
+        
+        
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock %}

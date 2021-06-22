@@ -1,0 +1,17 @@
+media
+static/ckeditor
+db.sqlite3
+manage.py
+index.wsgi
+default_settings.py
+manage.py
+main/secret_key.py
+main/settings.py
+estetico/__pycache__
+main/__pycache__
+
+accounts/migrations
+news/migrations
+
+
+__pycache__
