@@ -46,7 +46,7 @@ $('.spec__slider').slick({
       dots: true
     }
   }, {
-    breakpoint: 992,
+    breakpoint: 993,
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1
@@ -69,7 +69,19 @@ $('.branch__slider').slick({
   arrows: true,
   asNavFor: '.branch__nav, .branch__text-nav',
   prevArrow: "<div class='arrow-wrap prev'><i class='fas fa-long-arrow-alt-left '></i></div>",
-  nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>"
+  nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>",
+  responsive: [{
+    breakpoint: 1401,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true
+    }
+  } // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+  ]
 });
 $('.branch__nav').slick({
   slidesToShow: 1,
