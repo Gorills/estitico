@@ -163,8 +163,13 @@ $('.range-form__btn').click(function (e) {
   var checkboxes = [];
   $('input:checkbox:checked').each(function () {
     checkboxes.push(this.value);
-  }); // $('#output').val(checkboxes.join(', '));
-  // $('.range').val($('#range').val());
+  });
+  $('.popup').addClass('popup--active');
+  $('#value').val(checkboxes.join(', '));
+  $('#old').val($('#range').val());
+});
+$('.popup__closer, .popup__cancel').click(function () {
+  $('.popup').removeClass('popup--active');
 });
 var acc = document.getElementsByClassName("accordion");
 var i;
