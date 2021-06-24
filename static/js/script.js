@@ -1,4 +1,4 @@
-$(".header__link , .header__link-decor, .header__online-link, .header__tel").click(function () {
+$(".header__link-decor, .header__online-link, .header__tel").click(function () {
   $(".menu-btn").removeClass('menu-btn_active');
   $(".header").removeClass('header--active');
 });
@@ -25,6 +25,13 @@ jQuery(document).ready(function ($) {
       $(this).addClass('header__link--active');
     }
   });
+});
+$(".header__item-drop").click(function (e) {
+  e.preventDefault();
+  $(".header__dropdown").toggleClass('header__dropdown--active');
+});
+$(".header__dropdown").mouseleave(function () {
+  $(".header__dropdown").removeClass('header__dropdown--active');
 });
 $('.spec__slider').slick({
   dots: false,
