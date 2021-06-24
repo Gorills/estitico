@@ -35,3 +35,7 @@ def special_view(request):
 def servises_detail(request):
 
     return render(request, 'estetico/servises_detail.html')
+
+def review_list(request):
+
+    return render(request, 'estetico/review_list.html')
