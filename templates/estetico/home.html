@@ -37,7 +37,7 @@
     <img src="{% static 'images/start.png' %}" alt="" class="start__img">
 </section>
 
-<section class="services">
+<section class="services" id="servises">
     <div class="container">
         <div class="services__inner">
             <h2 class="title services__title">Услуги салонов</h2>
@@ -45,17 +45,17 @@
                 <div class="services__left">
                 
                     <div class="services__item">
-                        <a href="#" class="services__item-big">
+                        <a href="{% url 'servises_detail' %}" class="services__item-big">
                             <img src="{% static 'images/1.png' %}" alt="" class="services__img">
                             <p class="services__item-text">LPG - массаж на аппарате VORTEX</p>
                         </a>
 
                         <div class="services__item-wrap services__item-wrap--right">
-                            <a href="#" class="services__item-little">
+                            <a href="{% url 'servises_detail' %}" class="services__item-little">
                                 <img src="{% static 'images/2.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">LPG-массаж для лица</p>
                             </a>
-                            <a href="#" class="services__item-little">
+                            <a href="{% url 'servises_detail' %}" class="services__item-little">
                                 <img src="{% static 'images/3.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">Лазерная эпиляция</p>
                             </a>
@@ -65,16 +65,16 @@
                     <div class="services__item">
 
                         <div class="services__item-wrap services__item-wrap--left">
-                            <a href="#" class="services__item-little">
+                            <a href="{% url 'servises_detail' %}" class="services__item-little">
                                 <img src="{% static 'images/4.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">Кавитация</p>
                             </a>
-                            <a href="#" class="services__item-little">
+                            <a href="{% url 'servises_detail' %}" class="services__item-little">
                                 <img src="{% static 'images/5.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">Прессотерапия</p>
                             </a>
                         </div>
-                        <a href="#" class="services__item-big">
+                        <a href="{% url 'servises_detail' %}" class="services__item-big">
                             <img src="{% static 'images/6.png' %}" alt="" class="services__img">
                             <p class="services__item-text">Уход за лицом</p>
                         </a>

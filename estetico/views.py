@@ -30,3 +30,8 @@ def price(request):
 def special_view(request):
 
     return render(request, 'estetico/special_view.html')
+
+
+def servises_detail(request):
+
+    return render(request, 'estetico/servises_detail.html')
