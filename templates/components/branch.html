@@ -7,16 +7,12 @@
                 <h2 class="title branch__title">Филиалы</h2>
 
                 <div class="branch__text-nav"> 
-
+                    {% for branch in request.departments_list %}
                     <div class="branch__text-nav-item">
-                        Салон на Нагатинской
+                        {{ branch.title }}
                     </div>
-                    <div class="branch__text-nav-item">
-                        Салон на Кропоткинской 
-                    </div>
-                    <div class="branch__text-nav-item">
-                        Салон на Молодцова
-                    </div>
+                    
+                    {% endfor %}
                     
 
                 </div>
@@ -25,122 +21,32 @@
             <div class="branch__wrap">
 
                 <div class="branch__nav">
-
+                {% for branch in request.departments_list %}
                     <div class="branch__nav-item">
                         <p class="branch__nav-adress">
-                        Нагатинская набережная 18, корпус 1   
+                        {{ branch.address }}
                         </p>
 
                         <div class="branch__nav-wrap">
                             <img src="{% static 'images/slider/metro.png' %}" alt="Коломенская"> 
-                            <a href="" class="branch__nav-link">Коломенская</a>
+                            <a href="" class="branch__nav-link">{{ branch.metro }}</a>
                         </div> 
 
-                        <p class="branch__nav-time">Работаем с 10:00 до 21:00 Без выходых</p>
+                        <p class="branch__nav-time">{{ branch.time }}</p>
                         <p class="branch__nav-text">Услуги салона</p>
                         <ul class="branch__nav-list">
+
+                            {% for service in branch.services.all %}
                             <li class="branch__nav-list-item">
-                                <a href="#" class="branch__nav-item-link">— LPG - массаж на аппарате VORTEX </a>
+                                <a href="{{ service.get_absolute_url }}" class="branch__nav-item-link">{{ service.title }} </a>
                             </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— LPG-массаж для лица </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Лазерная эпиляция </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Кавитация</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Прессотерапия</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Бандажное обертывание</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Уход за лицом</a>
-                            </li>
+                             {% endfor %}
                         
                         </ul>
 
                     </div>
-                    <div class="branch__nav-item">
-                        <p class="branch__nav-adress">
-                        Нагатинская набережная 18, корпус 1   
-                        </p>
-
-                        <div class="branch__nav-wrap">
-                            <img src="{% static 'images/slider/metro.png' %}" alt="Коломенская"> 
-                            <a href="" class="branch__nav-link">Коломенская</a>
-                        </div> 
-
-                        <p class="branch__nav-time">Работаем с 10:00 до 21:00 Без выходых</p>
-                        <p class="branch__nav-text">Услуги салона</p>
-                        <ul class="branch__nav-list">
-                            <li class="branch__nav-list-item">
-                                <a href="#" class="branch__nav-item-link">— LPG - массаж на аппарате VORTEX </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— LPG-массаж для лица </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Лазерная эпиляция </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Кавитация</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Прессотерапия</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Бандажное обертывание</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Уход за лицом</a>
-                            </li>
-                        
-                        </ul>
-
-                    </div>
-                    <div class="branch__nav-item">
-                        <p class="branch__nav-adress">
-                        Нагатинская набережная 18, корпус 1   
-                        </p>
-
-                        <div class="branch__nav-wrap">
-                            <img src="{% static 'images/slider/metro.png' %}" alt="Коломенская"> 
-                            <a href="" class="branch__nav-link">Коломенская</a>
-                        </div> 
-
-                        <p class="branch__nav-time">Работаем с 10:00 до 21:00 Без выходых</p>
-                        <p class="branch__nav-text">Услуги салона</p>
-                        <ul class="branch__nav-list">
-                            <li class="branch__nav-list-item">
-                                <a href="#" class="branch__nav-item-link">— LPG - массаж на аппарате VORTEX </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— LPG-массаж для лица </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Лазерная эпиляция </a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Кавитация</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Прессотерапия</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Бандажное обертывание</a>
-                            </li>
-                             <li class="branch__nav-list-item">
-                                <a href="" class="branch__nav-item-link">— Уход за лицом</a>
-                            </li>
-                        
-                        </ul>
-
-                    </div>
-
+                    
+                {% endfor %} 
                 
                 
                 </div>
@@ -148,25 +54,16 @@
 
                 <div class="branch__slider">
 
-                    <div class="branch__slider-item" id="slide-1">
+                     {% for branch in request.departments_list %}
+                    <div class="branch__slider-item">
 
+                        <img src="{{ branch.photo.url }}" alt="{{ branch.title }}" class="branch__slider-img">
+        
+                    </div>
+                    
+                    {% endfor %}
+                    
 
-                    
-                        <img src="{% static 'images/slider/slider1.jpg' %}" alt="" class="branch__slider-img">
-                    
-                    
-                    </div>
-
-                    <div class="branch__slider-item" id="slide-2">
-                        <img src="{% static 'images/slider/slider2.jpg' %}" alt="" class="branch__slider-img">
-                    
-                    
-                    </div>
-                     <div class="branch__slider-item" id="slide-3">
-                        <img src="{% static 'images/slider/slider1.jpg' %}" alt="" class="branch__slider-img">
-                    
-                    
-                    </div>
                 
                 
                 </div>

@@ -26,6 +26,15 @@ jQuery(document).ready(function ($) {
     }
   });
 });
+jQuery(document).ready(function ($) {
+  var url = document.location.href;
+  $.each($(".header__dropdown-link"), function () {
+    if (this.href == url) {
+      $(this).addClass('header__dropdown-link--active');
+      $('.header__item-drop').addClass('header__link--active');
+    }
+  });
+});
 $(".header__item-drop").click(function (e) {
   e.preventDefault();
   $(".header__dropdown").toggleClass('header__dropdown--active');

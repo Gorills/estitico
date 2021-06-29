@@ -9,12 +9,12 @@
                 </div>
                 <div class="footer__column">
                     <div class="footer__menu">
-                        <a href="#" class="footer__menu-item">Главная</a>
-                        <a href="#" class="footer__menu-item">О нас</a>
-                        <a href="#" class="footer__menu-item">Прайс на процедуры</a>
-                        <a href="#" class="footer__menu-item">Спецпредложения</a>
-                        <a href="#" class="footer__menu-item">Блог</a>
-                        <a href="#" class="footer__menu-item">Контакты</a>
+                        <a href="{% url 'home' %}" class="footer__menu-item">Главная</a>
+                        <a href="{% url 'home' %}" class="footer__menu-item">О нас</a>
+                        <a href="{% url 'price' %}" class="footer__menu-item">Прайс на процедуры</a>
+                        <a href="{% url 'special' %}" class="footer__menu-item">Спецпредложения</a>
+                        <a href="{% url 'blog' %}" class="footer__menu-item">Блог</a>
+                        <a href="{% url 'contacts' %}" class="footer__menu-item">Контакты</a>
                         <a href="#" class="footer__menu-item">ОБУЧЕНИЕ</a>
                     </div>
                 </div>
@@ -22,13 +22,11 @@
                     <p class="footer__column-title">Услуги салонов</p>
                     
                     <ul class="footer__list">
-                        <li class="footer__li"><a href="" class="footer__list-link">- LPG - МАССАЖ НА АППАРАТЕ VORTEX</a></li>
-                        <li class="footer__li"><a href="" class="footer__list-link">- LPG-МАССАЖ ДЛЯ ЛИЦА</a></li>
-                        <li class="footer__li"><a href="" class="footer__list-link">- ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</a></li>
-                        <li class="footer__li"><a href="" class="footer__list-link">- КАВИТАЦИЯ</a></li>
-                        <li class="footer__li"><a href="" class="footer__list-link">- ПРЕССОТЕРАПИЯ</a></li>
-                        <li class="footer__li"><a href="" class="footer__list-link">- БАНДАЖНОЕ ОБЕРТЫВАНИЕ</a></li>
-                        <li class="footer__li"><a href="" class="footer__list-link">- УХОД ЗА ЛИЦОМ</a></li>
+                        {% for service in request.services_list %}
+                        <li class="footer__li"><a href="{{ service.get_absolute_url }}" class="footer__list-link">- {{ service.title }}</a></li>
+                 
+                        {% endfor %}
+
                     </ul>
                 </div>
                 <div class="footer__column">

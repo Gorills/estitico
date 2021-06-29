@@ -58,6 +58,48 @@
     {% endblock %}
 
     {% include 'parts/footer.html'  %}
+    <div class="popup">
+
+    
+    <div class="popup__closer"></div>
+        <div class="popup__inner">
+            <img src="{% static 'images/cancel.png' %}" alt="" class="popup__cancel">
+            <p class="popup__title">Подберём для Вас методики и подходящие услуги</p>
+            <form action="#" class="popup__form">
+            <div class="popup__form-top">
+                <div class="popup__label-wrap">
+                    <label for="old" class="popup__label">Ваш возраст</label>
+                    <input id="old" type="text" class="popup__input" value="35">
+                </div>
+                <div class="popup__check">
+                    <p class="popup__label">Выбранная область:</p>
+                    
+                    <input id="value" type="text" class="popup__value" value="" readonly>
+
+                    </div>
+                </div>
+
+                <div class="popup__bottom">
+                    <p class="popup__bottom-text">Укажите контактные данные для связи</p>
+
+                    <div class="popup__bottom-wrap">
+                        <input type="text" class="popup__input-bottom" placeholder="Ваше имя" required>
+                        <input type="text" class="popup__input-bottom" placeholder="+7 ХХХ ХХХ-ХХ-ХХ" required> 
+                    </div>
+
+                    
+                    <input type="checkbox" class="custom-checkbox" id="politics" name="happy" required>
+                    <label for="politics">— согласие на обработку персональных данных</label>
+
+                </div>
+                <button class="btn btn__full">Оставить заявку</button>
+
+            </form>
+        
+        </div>
+    
+
+</div>
 
     <script src="{% static 'js/jquery.js' %}?v.1.0.3"></script>
     <script type="text/javascript" src="{% static 'js/slick.js' %}?v.1.0.3"></script>

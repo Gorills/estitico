@@ -51,88 +51,43 @@
 
                     
                     </p>
+                    
+
+                    {% for service in services %}
                     <div class="price__accordeon">
 
                         <button class="accordion">
                             <div class="price__accordeon-wrap">
                                 <div class="price__accordeon-numb">1</div> 
-                                <p class="price__accordeon-title">LPG-массаж для лица</p> 
+                                <p class="price__accordeon-title">{{ service.title }}</p> 
                             </div>
                             <div class="price__accordeon-wrap">
-                                <a href="#" class="price__accordeon-link">Описание</a>
+                                <a href="{{ service.get_absolute_url }}" class="price__accordeon-link">Описание</a>
                                 <p class="price__accordeon-open">Открыть прайс</p>
                             </div>
                         </button>
                         <div class="panel">
                             <p class="panel__text">Процедуры</p>
+                            {% for procedure in service.procedures.all %}
                             <div class="panel__item">
                                 
                                 
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
+                                <p class="panel__item-title">{{ procedure.title }}</p>
                                     
                                     <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
+                                        <p class="panel__price-numb">{{ procedure.sessions }}</p>
+                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  {{ procedure.time }}</p>
                                         
                                     </div>
-                                    <p class="panel__price-price">1000 руб</p>
+                                    <p class="panel__price-price">{{ procedure.price }} руб</p>
                                      <a href="#" class="btn btn__gray">Записаться онлайн</a>
                                 
                                 
                             
                             
                             </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                    <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
+                            {% endfor %}
+                           
 
 
                         </div>
@@ -141,186 +96,9 @@
                     
                     
                     </div>
-                    <div class="price__accordeon">
+                    {% endfor %}
 
-                        <button class="accordion">
-                            <div class="price__accordeon-wrap">
-                                <div class="price__accordeon-numb">1</div> 
-                                <p class="price__accordeon-title">LPG-массаж для лица</p> 
-                            </div>
-                            <div class="price__accordeon-wrap">
-                                <a href="#" class="price__accordeon-link">Описание</a>
-                                <p class="price__accordeon-open">Открыть прайс</p>
-                            </div>
-                        </button>
-                        <div class="panel">
-                            <p class="panel__text">Процедуры</p>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                    <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-
-
-                        </div>
-
-                       
                     
-                    
-                    </div>
-                    <div class="price__accordeon">
-
-                        <button class="accordion">
-                            <div class="price__accordeon-wrap">
-                                <div class="price__accordeon-numb">1</div> 
-                                <p class="price__accordeon-title">LPG-массаж для лица</p> 
-                            </div>
-                            <div class="price__accordeon-wrap">
-                                <a href="#" class="price__accordeon-link">Описание</a>
-                                <p class="price__accordeon-open">Открыть прайс</p>
-                            </div>
-                        </button>
-                        <div class="panel">
-                            <p class="panel__text">Процедуры</p>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                     <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-                            <div class="panel__item">
-                                
-                                
-                                <p class="panel__item-title">Процедура шейно-воротниковой зоны</p>
-                                    
-                                    <div class="panel__price-wrap">
-                                        <p class="panel__price-numb">1 сеанс</p>
-                                        <p class="panel__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="panel__price-icon">  30 минут</p>
-                                        
-                                    </div>
-                                    <p class="panel__price-price">1000 руб</p>
-                                    <a href="#" class="btn btn__gray">Записаться онлайн</a>
-                                
-                                
-                            
-                            
-                            </div>
-
-
-                        </div>
-
-                       
-                    
-                    
-                    </div>
 
                 
                 </div>

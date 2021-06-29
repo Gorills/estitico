@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Services, Special, Departments
 
 # Create your views here.
 def home(request):
@@ -22,19 +23,43 @@ def special(request):
 
     return render(request, 'estetico/special.html')
 
+
+
 def price(request):
 
+    context = {
 
-    return render(request, 'estetico/price.html')
+        'services': Services.objects.all()
+    }
 
-def special_view(request):
-
-    return render(request, 'estetico/special_view.html')
+    return render(request, 'estetico/price.html', context)
 
 
-def servises_detail(request):
 
-    return render(request, 'estetico/servises_detail.html')
+def special_detail(request, slug):
+
+    context = {
+        'special': Special.objects.get(slug=slug),
+        'image': Special.objects.get(slug=slug).images.first(),
+        'images': Special.objects.get(slug=slug).images.all()[1:],
+    }
+
+    return render(request, 'estetico/special_view.html', context)
+
+
+def services_detail(request, slug):
+
+    context = {
+
+        'service': Services.objects.get(slug=slug),
+        'image': Services.objects.get(slug=slug).images.first(),
+        'images': Services.objects.get(slug=slug).images.all()[1:],
+
+
+    }
+
+
+    return render(request, 'estetico/services_detail.html', context)
 
 def review_list(request):
 

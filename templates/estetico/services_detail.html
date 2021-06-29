@@ -1,0 +1,124 @@
+
+{% extends 'base.html' %}
+
+{% block title %}  {% endblock %}
+{% block description %} {% endblock %}
+{% block keywords %}  {% endblock %}
+{% block canonical %} {% endblock %}
+{% block og:title %}{% endblock %}
+{% block og:description %} {% endblock %}
+{% block og:url %}  {% endblock %}
+{% block twitter:title %}{% endblock %}
+{% block twitter:description %}{% endblock %}
+{% block vk:image %}{% endblock %}
+{% block og:image %}{% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+<section class="start">
+    <div class="container">
+        <div class="start__inner">
+            <div class="start__wrapper">
+                <h1 class="start__title">
+                <strong>{{ service.title }}</strong>
+                </h1>
+            </div>
+
+            <div class="start__sale">
+                
+            </div>
+        </div>
+    </div>
+    <img src="{{ image.photo.url }}" alt="{{ service.title }}" class="start__img">
+</section>
+
+
+<div class="special-detail">
+    <div class="container">
+        <div class="special-detail__inner">
+            <h2 class="title special-detail__title">Особенности процедуры</h2>
+            <div class="special-detail__wrapper">
+                <div class="special-detail__left">
+                    <p class="special-detail__desc">
+                    {{ service.description }}
+                    </p>
+                    <p class="special-detail__subtitle">Процедуры</p>
+
+                    {% for proc in service.procedures.all %}
+                        <div class="special-detail__item">
+                                                 
+                            <p class="special-detail__item-title">{{ proc.title }}</p>
+                            
+                                <div class="special-detail__price-wrap">
+                                    <p class="special-detail__price-numb">{{ proc.sessions }}</p>
+                                    <p class="special-detail__price-time"><img src="{% static 'images/clock.png' %}" alt="" class="special-detail__price-icon">  {{ proc.time }}</p>
+                                    
+                                </div>
+                                <p class="special-detail__price-price">{{ proc.price }} руб</p>
+                                <a href="#" class="btn btn__gray">Записаться онлайн</a>
+                            
+                        </div>
+
+                    {% endfor %}
+                        
+
+                        
+                        <a href="{% url 'price' %}" class="btn btn__empty">Все цены на услуги</a>
+
+                </div>
+                <div class="special-detail__right">
+                    <div class="services__rec">
+                        <div class="services__spec">
+                            <img src="{% static 'images/spec.png' %}" alt="" class="services__rec-img">
+                            <p class="services__rec-title">Мнение специалиста</p>
+                        </div>
+                        {% for specialist in service.specialists.all %}
+
+                        <p class="services__rec-text">
+                                 {{ specialist.title }}
+                        </p>
+                        <p class="services__rec-it">
+                            {{ specialist.text }}
+                        </p>
+                        {% endfor %}
+                    </div>
+
+                    <div class="special-detail__right-subtitle">Показания</div>
+                    <div class="special-detail__right-list">
+
+                        {{ service.testimony | safe }}
+
+                        
+                    </div>
+                    <div class="special-detail__right-subtitle">Противопоказания</div>
+                    <div class="special-detail__right-list">
+                        {{ service.contraindications | safe }}
+                        
+                        
+                    
+                    </div>
+
+
+                
+                
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+{% include 'components/spec.html' %}
+{% include 'components/our-command.html' %} 
+{% include 'components/rewiew.html'  %}
+{% include 'components/branch.html'  %}
+
+
+ 
+
+{% endblock %}

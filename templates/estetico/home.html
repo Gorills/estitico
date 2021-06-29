@@ -45,17 +45,17 @@
                 <div class="services__left">
                 
                     <div class="services__item">
-                        <a href="{% url 'servises_detail' %}" class="services__item-big">
+                        <a href="#" class="services__item-big">
                             <img src="{% static 'images/1.png' %}" alt="" class="services__img">
                             <p class="services__item-text">LPG - массаж на аппарате VORTEX</p>
                         </a>
 
                         <div class="services__item-wrap services__item-wrap--right">
-                            <a href="{% url 'servises_detail' %}" class="services__item-little">
+                            <a href="#" class="services__item-little">
                                 <img src="{% static 'images/2.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">LPG-массаж для лица</p>
                             </a>
-                            <a href="{% url 'servises_detail' %}" class="services__item-little">
+                            <a href="#" class="services__item-little">
                                 <img src="{% static 'images/3.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">Лазерная эпиляция</p>
                             </a>
@@ -65,16 +65,16 @@
                     <div class="services__item">
 
                         <div class="services__item-wrap services__item-wrap--left">
-                            <a href="{% url 'servises_detail' %}" class="services__item-little">
+                            <a href="#" class="services__item-little">
                                 <img src="{% static 'images/4.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">Кавитация</p>
                             </a>
-                            <a href="{% url 'servises_detail' %}" class="services__item-little">
+                            <a href="#" class="services__item-little">
                                 <img src="{% static 'images/5.png' %}" alt="" class="services__img">
                                 <p class="services__item-text">Прессотерапия</p>
                             </a>
                         </div>
-                        <a href="{% url 'servises_detail' %}" class="services__item-big">
+                        <a href="#" class="services__item-big">
                             <img src="{% static 'images/6.png' %}" alt="" class="services__img">
                             <p class="services__item-text">Уход за лицом</p>
                         </a>
@@ -155,7 +155,6 @@
 
 
 
-
 <div class="blog-home">
     <div class="container">
         <div class="blog-home__inner">
@@ -191,47 +190,5 @@
 
 
 
-<div class="popup">
-
-    
-    <div class="popup__closer"></div>
-        <div class="popup__inner">
-            <img src="{% static 'images/cancel.png' %}" alt="" class="popup__cancel">
-            <p class="popup__title">Подберём для Вас методики и подходящие услуги</p>
-            <form action="#" class="popup__form">
-            <div class="popup__form-top">
-                <div class="popup__label-wrap">
-                    <label for="old" class="popup__label">Ваш возраст</label>
-                    <input id="old" type="text" class="popup__input" value="35">
-                </div>
-                <div class="popup__check">
-                    <p class="popup__label">Выбранная область:</p>
-                    
-                    <input id="value" type="text" class="popup__value" value="" readonly>
-
-                    </div>
-                </div>
-
-                <div class="popup__bottom">
-                    <p class="popup__bottom-text">Укажите контактные данные для связи</p>
-
-                    <div class="popup__bottom-wrap">
-                        <input type="text" class="popup__input-bottom" placeholder="Ваше имя" required>
-                        <input type="text" class="popup__input-bottom" placeholder="+7 ХХХ ХХХ-ХХ-ХХ" required> 
-                    </div>
-
-                    
-                    <input type="checkbox" class="custom-checkbox" id="politics" name="happy" required>
-                    <label for="politics">— согласие на обработку персональных данных</label>
-
-                </div>
-                <button class="btn btn__full">Оставить заявку</button>
-
-            </form>
-        
-        </div>
-    
-
-</div>
 
 {% endblock %}

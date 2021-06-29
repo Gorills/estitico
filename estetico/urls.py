@@ -11,7 +11,7 @@ urlpatterns = [
     path('review_list', views.review_list, name='review_list'),
     path('contacts/', views.contact, name='contacts'),
     path('special/', views.special, name='special'),
-    path('special/special_view', views.special_view, name='special_view'),
+    path('special/<slug:slug>', views.special_detail, name='special_detail'),
     path('price/', views.price, name='price'),
-    path('servises_detail/', views.servises_detail, name='servises_detail'),
+    path('<slug:slug>/', views.services_detail, name='services_detail'),
 ]
