@@ -48,9 +48,9 @@
                         <div class="spec__item">
                             <div class="spec__item-wrap">
 
-                                {% for image in spec.images.all %}
-                                <img src="{{ image.photo.url }}" alt="{{ spec.title }}" class="spec__item-img">
-                                {% endfor %}
+                               
+                                <img src="{{ spec.get_image.url }}" alt="{{ spec.title }}" class="spec__item-img">
+                                
                                 
                                 <div class="spec__circle">
 

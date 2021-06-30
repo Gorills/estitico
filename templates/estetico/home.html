@@ -16,7 +16,7 @@
 
 {% block body %}
 {% load static %}
-
+{% load thumbnail %}
 <section class="start">
     <div class="container">
         <div class="start__inner">
@@ -45,38 +45,76 @@
                 <div class="services__left">
                 
                     <div class="services__item">
-                        <a href="#" class="services__item-big">
-                            <img src="{% static 'images/1.png' %}" alt="" class="services__img">
-                            <p class="services__item-text">LPG - массаж на аппарате VORTEX</p>
+
+                        <a href="{{ first.get_absolute_url }}" class="services__item-big">
+
+                        {% thumbnail first.get_image "850x590" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ first.title }}" class="services__img">
+                        
+                        {% endthumbnail %}
+
+                            
+                            <p class="services__item-text">{{ first.title }}</p>
                         </a>
 
                         <div class="services__item-wrap services__item-wrap--right">
-                            <a href="#" class="services__item-little">
-                                <img src="{% static 'images/2.png' %}" alt="" class="services__img">
-                                <p class="services__item-text">LPG-массаж для лица</p>
+
+                            <a href="{{ second.get_absolute_url }}" class="services__item-little">
+                                {% thumbnail second.get_image "414x285" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ second.title }}" class="services__img">
+                                
+                                {% endthumbnail %}
+
+                                
+                                <p class="services__item-text">{{ second.title }}</p>
                             </a>
-                            <a href="#" class="services__item-little">
-                                <img src="{% static 'images/3.png' %}" alt="" class="services__img">
-                                <p class="services__item-text">Лазерная эпиляция</p>
+
+                            <a href="{{ third.get_absolute_url }}" class="services__item-little">
+                                {% thumbnail third.get_image "414x285" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ third.title }}" class="services__img">
+                                
+                                {% endthumbnail %}
+
+                                
+                                <p class="services__item-text">{{ third.title }}</p>
                             </a>
+
                         </div>
                     
                     </div>
                     <div class="services__item">
 
                         <div class="services__item-wrap services__item-wrap--left">
-                            <a href="#" class="services__item-little">
-                                <img src="{% static 'images/4.png' %}" alt="" class="services__img">
-                                <p class="services__item-text">Кавитация</p>
+
+                            <a href="{{ fourth.get_absolute_url }}" class="services__item-little">
+                                {% thumbnail third.get_image "414x285" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ fourth.title }}" class="services__img">
+                                
+                                {% endthumbnail %}
+
+                                
+                                <p class="services__item-text">{{ fourth.title }}</p>
                             </a>
-                            <a href="#" class="services__item-little">
-                                <img src="{% static 'images/5.png' %}" alt="" class="services__img">
-                                <p class="services__item-text">Прессотерапия</p>
+
+                            <a href="{{ fifth.get_absolute_url }}" class="services__item-little">
+                                {% thumbnail fifth.get_image "414x285" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ fifth.title }}" class="services__img">
+                                
+                                {% endthumbnail %}
+
+                                
+                                <p class="services__item-text">{{ fifth.title }}</p>
                             </a>
+
                         </div>
-                        <a href="#" class="services__item-big">
-                            <img src="{% static 'images/6.png' %}" alt="" class="services__img">
-                            <p class="services__item-text">Уход за лицом</p>
+                        
+                        <a href="{{ sixth.get_absolute_url }}" class="services__item-big">
+                            {% thumbnail sixth.get_image "850x590" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ sixth.title }}" class="services__img">
+                            
+                            {% endthumbnail %}
+                            
+                            <p class="services__item-text">{{ sixth.title }}</p>
                         </a>
 
                     

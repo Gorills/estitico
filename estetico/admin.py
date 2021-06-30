@@ -31,7 +31,7 @@ class SpecialistAdmin(admin.TabularInline):
 
 class ServicesAdmin(admin.ModelAdmin):
     form = ServicesAdminForm
-    list_display = ('title', )
+    list_display = ('title', 'id')
     prepopulated_fields = {'slug': ('title',)}
     save_as = True
     save_on_top = True

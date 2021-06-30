@@ -4,14 +4,19 @@ from .models import Services, Special, Departments
 # Create your views here.
 def home(request):
 
+    context = {
+        'first': Services.objects.get(id=1),
+        'second': Services.objects.get(id=2),
+        'third': Services.objects.get(id=3),
+        'fourth': Services.objects.get(id=4),
+        'fifth': Services.objects.get(id=5),
+        'sixth': Services.objects.get(id=6),
 
-    return render(request, 'estetico/home.html')
+    }
+    return render(request, 'estetico/home.html', context)
 
 
-def blog(request):
 
-
-    return render(request, 'estetico/blog.html')
 
 def contact(request):
 

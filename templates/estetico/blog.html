@@ -16,7 +16,7 @@
 
 {% block body %}
 {% load static %}
-
+{% load thumbnail %}
 <section class="start">
     <div class="container">
         <div class="start__inner">
@@ -39,94 +39,25 @@
     <div class="container">
     <div class="title">Блог</div>
         <div class="blog-home__inner">
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-             <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                
-                <a href="#" class="blog-home__link">Читать полностью 
-                <div class="blog-home__icon-wrap">
-                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
-                </div>
-                </a>
-            </div>
-            <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
 
-                <a href="#" class="blog-home__link">Читать полностью 
+        {% for post in posts %}
+             <div class="blog-home__item">
+
+                {% thumbnail post.image "416x228" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ post.title }}" class="blog-home__img">
+                {% endthumbnail %}
+
+                
+                <div class="blog-home__date">{{ post.date }}</div>
+                <h3 class="blog-home__title">{{ post.title }}</h3>
+                
+                <a href="{{ post.get_absolute_url }}" class="blog-home__link">Читать полностью 
                 <div class="blog-home__icon-wrap">
                     <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
                 </div>
                 </a>
             </div>
+        {% endfor %}
 
         
         </div>

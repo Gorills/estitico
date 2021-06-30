@@ -12,6 +12,10 @@ class Services(models.Model):
     meta_description = models.CharField(max_length=500, verbose_name='Мета описание', blank=True, null=True)
     meta_keywords = models.CharField(max_length=500, verbose_name='Ключевые слова', blank=True, null=True)
 
+    def get_image(self):
+      album = self.images.all().first()
+      if album:
+         return album.photo
 
     def __str__(self):
         return self.title
@@ -77,6 +81,11 @@ class Special(models.Model):
     text = models.CharField(max_length=250, verbose_name='Текст под скидкой', null=True)
     procent = models.BooleanField(null=True, default=False, verbose_name='Скидка в процентах')
 
+    def get_image(self):
+      album = self.images.all().first()
+      if album:
+         return album.photo
+         
     def __str__(self):
         return self.title
 
