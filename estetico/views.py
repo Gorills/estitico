@@ -69,3 +69,13 @@ def services_detail(request, slug):
 def review_list(request):
 
     return render(request, 'estetico/review_list.html')
+
+
+def privacy(request):
+
+    return render(request, 'estetico/privacy.html')
+
+
+def user_agreement(request):
+
+    return render(request, 'estetico/user_agreement.html')

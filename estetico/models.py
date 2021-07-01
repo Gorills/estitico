@@ -115,6 +115,7 @@ class Departments(models.Model):
     metro = models.CharField(max_length=300, verbose_name='Метро рядом')
     photo = models.ImageField(upload_to='images/departaments')
     services = models.ManyToManyField(Services, verbose_name='Услуги', related_name='departaments')
+    map = models.TextField(verbose_name='Код карты', null=True)
 
     def __str__(self):
         return self.title
