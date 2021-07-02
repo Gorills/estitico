@@ -167,6 +167,21 @@ $(".range-form__clear").click(function () {
 $(".checkbox").click(function () {
   $('.range-form__clear').addClass('range-form__clear--active');
 });
+
+let onChange = function () {
+  let range = document.getElementById('range');
+
+  if (range.value >= 55) {
+    document.getElementById('output').innerHTML = range.value + '+';
+  } else {
+    document.getElementById('output').innerHTML = range.value;
+  }
+};
+
+document.getElementById('range').addEventListener('input', function () {
+  onChange();
+});
+onChange();
 $('.range-form__btn').click(function (e) {
   e.preventDefault();
   var checkboxes = [];
@@ -175,7 +190,13 @@ $('.range-form__btn').click(function (e) {
   });
   $('.popup').addClass('popup--active');
   $('#value').val(checkboxes.join(', '));
-  $('#old').val($('#range').val());
+
+  if ($('#range').val() >= 55) {
+    $('#old').val($('#range').val() + ' +');
+  } else {
+    $('#old').val($('#range').val());
+  } // $('#old').val($('#range').val());
+
 });
 $('.popup__closer, .popup__cancel').click(function () {
   $('.popup').removeClass('popup--active');

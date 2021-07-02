@@ -24,7 +24,7 @@
     
     <div class="range-form__wrap">
         <p class="range-form__check-title">Выберите область</p>
-        <div class="range-form__clear">сбросить <img class="range-form__icon" src="{% static 'images/cancel.png' %}" alt=""></div>
+        <div class="range-form__clear">сбросить <img class="range-form__icon" src="{% static 'images/cancel.png' %}" alt="сбросить"></div>
     </div>
 
     <div class="range-form__check">
@@ -141,16 +141,3 @@
     
 
 </div>
-
-<script>
-let onChange = function(){
-	let range = document.getElementById('range');
-	
-	document.getElementById('output').innerHTML = range.value;
-}
-document.getElementById('range').addEventListener('input', function(){		
-	onChange();
-});	
-onChange();
-
-</script>
