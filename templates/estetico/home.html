@@ -48,7 +48,7 @@
 
                         <a href="{{ first.get_absolute_url }}" class="services__item-big">
 
-                        {% thumbnail first.get_image "850x590" crop="center" as im %}
+                        {% thumbnail first.get_image "850x576" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ first.title }}" class="services__img">
                         
                         {% endthumbnail %}
@@ -109,7 +109,7 @@
                         </div>
                         
                         <a href="{{ sixth.get_absolute_url }}" class="services__item-big">
-                            {% thumbnail sixth.get_image "850x590" crop="center" as im %}
+                            {% thumbnail sixth.get_image "850x576" crop="center" as im %}
                                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ sixth.title }}" class="services__img">
                             
                             {% endthumbnail %}

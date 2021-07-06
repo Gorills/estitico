@@ -224,6 +224,7 @@ for (i = 0; i < acc.length; i++) {
 $(".rewiew__open").click(function (e) {
   e.preventDefault();
   $(this).prev().find('.rewiew__text').parent().toggleClass('rewiew__wrap--active');
+  $(this).parent().toggleClass('rewiew__item--active');
   $.fn.extend({
     toggleText: function (a, b) {
       return this.text(this.text() == b ? a : b);
