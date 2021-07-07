@@ -29,6 +29,12 @@ class SpecialistAdmin(admin.TabularInline):
     max_num = 1
 
 
+class SpecialistAdminReader(admin.ModelAdmin):
+    list_display = ('title', 'services')
+
+admin.site.register(Specialist, SpecialistAdminReader)
+
+
 class ServicesAdmin(admin.ModelAdmin):
     form = ServicesAdminForm
     list_display = ('title', 'id')
