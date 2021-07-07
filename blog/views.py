@@ -5,7 +5,7 @@ from .models import Post
 
 def blog(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all().order_by('-id')
     }
     return render(request, 'estetico/blog.html', context)
 

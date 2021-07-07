@@ -56,8 +56,7 @@ $('.spec__slider').slick({
     settings: {
       slidesToShow: 2,
       slidesToScroll: 2,
-      infinite: true,
-      dots: true
+      infinite: true
     }
   }, {
     breakpoint: 993,
@@ -110,35 +109,71 @@ $('.branch__text-nav').slick({
   infinite: true
 });
 
-if (window.matchMedia("(max-width: 857px)").matches) {
+if (window.matchMedia("(max-width: 1367px)").matches) {
   /* the viewport is less than 768 pixels wide */
   $('.our-command__wrap').slick({
     infinite: true,
     speed: 300,
     arrows: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
     dots: false,
     adaptiveHeight: true,
     prevArrow: "<div class='arrow-wrap prev'><i class='fas fa-long-arrow-alt-left '></i></div>",
-    nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>"
+    nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>",
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    } // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
   });
 }
 
-if (window.matchMedia("(max-width: 481px)").matches) {
+if (window.matchMedia("(max-width: 1367px)").matches) {
   /* the viewport is less than 768 pixels wide */
   $('.rewiew__inner').slick({
     infinite: true,
     speed: 300,
     arrows: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
     dots: false,
     adaptiveHeight: true,
     prevArrow: "<div class='arrow-wrap prev'><i class='fas fa-long-arrow-alt-left '></i></div>",
-    nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>"
+    nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>",
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    } // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
   });
 } // $(document).ready(function(){
 // 	$('#output').val($('#range').val());

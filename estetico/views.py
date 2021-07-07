@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Services, Special, Departments
+from blog.models import Post
 
 # Create your views here.
 def home(request):
@@ -11,6 +12,7 @@ def home(request):
         'fourth': Services.objects.get(id=4),
         'fifth': Services.objects.get(id=5),
         'sixth': Services.objects.get(id=6),
+        'posts': Post.objects.all().order_by('-id')[:4]
 
     }
     return render(request, 'estetico/home.html', context)

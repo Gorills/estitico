@@ -28,13 +28,13 @@
             </div>
 
             <div class="start__sale">
-                <div class="start__sale-item">
+                <a href="{% url 'special' %}" class="start__sale-item">
                     Акция
-                </div>
+                </a>
             </div>
         </div>
     </div>
-    <img src="{% static 'images/start.png' %}" alt="" class="start__img">
+    <img src="{% static 'images/start.jpg' %}" alt="" class="start__img">
 </section>
 
 <section class="services" id="servises">
@@ -87,7 +87,7 @@
                         <div class="services__item-wrap services__item-wrap--left">
 
                             <a href="{{ fourth.get_absolute_url }}" class="services__item-little">
-                                {% thumbnail third.get_image "414x285" crop="center" as im %}
+                                {% thumbnail fourth.get_image "414x285" crop="center" as im %}
                                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ fourth.title }}" class="services__img">
                                 
                                 {% endthumbnail %}
@@ -96,25 +96,25 @@
                                 <p class="services__item-text">{{ fourth.title }}</p>
                             </a>
 
-                            <a href="{{ fifth.get_absolute_url }}" class="services__item-little">
-                                {% thumbnail fifth.get_image "414x285" crop="center" as im %}
-                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ fifth.title }}" class="services__img">
+                            <a href="{{ sixth.get_absolute_url }}" class="services__item-little">
+                                {% thumbnail sixth.get_image "414x285" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ sixth.title }}" class="services__img">
                                 
                                 {% endthumbnail %}
 
                                 
-                                <p class="services__item-text">{{ fifth.title }}</p>
+                                <p class="services__item-text">{{ sixth.title }}</p>
                             </a>
 
                         </div>
                         
-                        <a href="{{ sixth.get_absolute_url }}" class="services__item-big">
-                            {% thumbnail sixth.get_image "850x576" crop="center" as im %}
-                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ sixth.title }}" class="services__img">
+                        <a href="{{ fifth.get_absolute_url }}" class="services__item-big">
+                            {% thumbnail fifth.get_image "850x576" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ fifth.title }}" class="services__img">
                             
                             {% endthumbnail %}
                             
-                            <p class="services__item-text">{{ sixth.title }}</p>
+                            <p class="services__item-text">{{ fifth.title }}</p>
                         </a>
 
                     
@@ -196,30 +196,26 @@
 <div class="blog-home">
     <div class="container">
         <div class="blog-home__inner">
-            <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog1.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
+
+            {% for post in posts %}
+             <div class="blog-home__item">
+
+                {% thumbnail post.image "416x228" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ post.title }}" class="blog-home__img">
+                {% endthumbnail %}
+
+                
+                <div class="blog-home__date">{{ post.date }}</div>
+                <h3 class="blog-home__title">{{ post.title }}</h3>
+                
+                <a href="{{ post.get_absolute_url }}" class="blog-home__link">Читать полностью 
+                <div class="blog-home__icon-wrap">
+                    <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon">
+                </div>
+                </a>
             </div>
-            <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog2.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
-            </div>
-            <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog3.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
-            </div>
-            <div class="blog-home__item">
-                <img src="{% static 'images/blog-home/blog4.png' %}" alt="" class="blog-home__img">
-                <div class="blog-home__date">07.05.2021</div>
-                <h3 class="blog-home__title">Открываем новый сезон с аппаратом VORTEX pro</h3>
-                <a href="#" class="blog-home__link">Читать полностью <img src="{% static 'images/blog-home/arrow.png' %}" alt="" class="blog-home__icon"></a>
-            </div>
+        {% endfor %}
+           
 
         
         </div>
