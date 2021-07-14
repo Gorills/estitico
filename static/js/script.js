@@ -88,8 +88,7 @@ $('.branch__slider').slick({
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1,
-      infinite: true,
-      dots: true
+      infinite: true
     }
   } // You can unslick at a given breakpoint now by adding:
   // settings: "unslick"
@@ -127,7 +126,7 @@ $('.our-command__wrap').slick({
       infinite: true
     }
   }, {
-    breakpoint: 480,
+    breakpoint: 481,
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -160,7 +159,7 @@ if (window.matchMedia("(max-width: 1367px)").matches) {
         infinite: true
       }
     }, {
-      breakpoint: 480,
+      breakpoint: 481,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -194,7 +193,7 @@ if (window.matchMedia("(max-width: 1367px)").matches) {
         infinite: true
       }
     }, {
-      breakpoint: 480,
+      breakpoint: 481,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
