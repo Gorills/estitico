@@ -1,5 +1,6 @@
 from django.utils.deprecation import MiddlewareMixin
 from .models import Services, Departments, Special
+from specialist.models import Specialist
 
 
 
@@ -33,4 +34,14 @@ class GetSpecial(MiddlewareMixin):
         request.special_list = special_list
         
         print(request.special_list)
+        return None
+
+class GetSpecialist(MiddlewareMixin):
+    def process_request(self, request):
+
+        specialist_list= Specialist.objects.all()
+       
+        request.specialist_list = specialist_list
+        
+        print(request.specialist_list)
         return None

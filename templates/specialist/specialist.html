@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+
+{% block title %}  {% endblock %}
+{% block description %} {% endblock %}
+{% block keywords %}  {% endblock %}
+{% block canonical %} {% endblock %}
+{% block og:title %}{% endblock %}
+{% block og:description %} {% endblock %}
+{% block og:url %}  {% endblock %}
+{% block twitter:title %}{% endblock %}
+{% block twitter:description %}{% endblock %}
+{% block vk:image %}{% endblock %}
+{% block og:image %}{% endblock %}
+
+
+{% block body %}
+{% load static %}
+{% load thumbnail %}
+<section class="start">
+    <div class="container">
+        <div class="start__inner">
+            <div class="start__wrapper">
+                <h1 class="start__title">
+                <strong>Наша команда</strong>
+                </h1>
+                
+            </div>
+
+            <div class="start__sale">
+                
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'images/blog/blog.jpg' %}" alt="" class="start__img">
+</section>
+
+
+
+{% endblock %}

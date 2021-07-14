@@ -108,40 +108,36 @@ $('.branch__text-nav').slick({
   asNavFor: '.branch__slider, .branch__nav',
   infinite: true
 });
-
-if (window.matchMedia("(max-width: 1367px)").matches) {
-  /* the viewport is less than 768 pixels wide */
-  $('.our-command__wrap').slick({
-    infinite: true,
-    speed: 300,
-    arrows: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: true,
-    dots: false,
-    adaptiveHeight: true,
-    prevArrow: "<div class='arrow-wrap prev'><i class='fas fa-long-arrow-alt-left '></i></div>",
-    nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>",
-    responsive: [{
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true
-      }
-    }, {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true
-      }
-    } // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-    ]
-  });
-}
+$('.our-command__wrap').slick({
+  infinite: true,
+  speed: 300,
+  arrows: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  infinite: true,
+  dots: false,
+  adaptiveHeight: true,
+  prevArrow: "<div class='arrow-wrap prev'><i class='fas fa-long-arrow-alt-left '></i></div>",
+  nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>",
+  responsive: [{
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: true
+    }
+  }, {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true
+    }
+  } // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+  ]
+});
 
 if (window.matchMedia("(max-width: 1367px)").matches) {
   /* the viewport is less than 768 pixels wide */

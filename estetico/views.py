@@ -1,6 +1,9 @@
+
 from django.shortcuts import render
 from .models import Services, Special, Departments
 from blog.models import Post
+
+
 
 # Create your views here.
 def home(request):
@@ -12,9 +15,13 @@ def home(request):
         'fourth': Services.objects.get(id=4),
         'fifth': Services.objects.get(id=5),
         'sixth': Services.objects.get(id=6),
-        'posts': Post.objects.all().order_by('-id')[:4]
+        'posts': Post.objects.all().order_by('-id')[:4],
+        
 
     }
+
+
+
     return render(request, 'estetico/home.html', context)
 
 
@@ -81,3 +88,8 @@ def privacy(request):
 def user_agreement(request):
 
     return render(request, 'estetico/user_agreement.html')
+
+
+def pravovaya_informaciya(request):
+
+    return render(request, 'estetico/pravovaya-informaciya.html' )
