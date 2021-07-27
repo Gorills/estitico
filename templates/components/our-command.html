@@ -8,7 +8,7 @@
             {% for specialist in request.specialist_list %}
 
                 <div class="our-command__item">
-                    <img src="{% static 'images/comand.png' %}" alt="" class="our-command__img">
+                    <img src="{% static 'images/comand.png' %}" alt="{{ specialist.name }} {{ specialist.specialty }}" class="our-command__img">
 
                     <div class="our-command__text">
                         <p class="our-command__name">{{ specialist.name }}</p>
