@@ -105,7 +105,9 @@ $('.branch__text-nav').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   asNavFor: '.branch__slider, .branch__nav',
-  infinite: true
+  infinite: true,
+  centerMode: true,
+  focusOnSelect: true
 });
 $('.our-command__wrap').slick({
   infinite: true,
