@@ -3,19 +3,19 @@ from .models import Specialist
 
 # Create your views here.
 
-def specialist(request):
+# def specialist(request):
 
-    context = {
-        'specialists': Specialist.objects.all()
-    }
+#     context = {
+#         'specialists': Specialist.objects.all()
+#     }
 
-    return render(request, 'specialist/specialist.html', context)
+#     return render(request, 'specialist/specialist.html', context)
 
 
-def specialist_detail(request, slug):
+# def specialist_detail(request, slug):
 
-    context = {
-        'specialist': Specialist.objects.get(slug=slug)
-    }
+#     context = {
+#         'specialist': Specialist.objects.get(slug=slug)
+#     }
 
-    return render(request, 'specialist/specialist_detail.html', context)
+#     return render(request, 'specialist/specialist_detail.html', context)

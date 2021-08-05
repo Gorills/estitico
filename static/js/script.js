@@ -310,3 +310,7 @@ $(".rewiew__open").click(function (e) {
   });
   $(this).toggleText('подробнее', 'скрыть');
 });
+$('.our-command__profile-text-cancel').click(function (e) {
+  e.preventDefault();
+  $('.our-command__profile-text').removeClass('our-command__profile-text--active');
+});

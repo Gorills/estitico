@@ -17,7 +17,9 @@
                         <p class="our-command__position">{{ specialist.specialty }}</p>
                     </div>
 
-                    <a href="{{ specialist.get_absolute_url }}"class="our-command__profile">Профайл</a>
+                    <p id="profile-{{forloop.counter}}" data-btn class="our-command__profile">Профайл</p>
+
+                    
                 
                 </div>
                 {% endfor %}
@@ -25,3 +27,16 @@
         </div>
     </div>
 </section>
+
+
+        {% for specialist in request.specialist_list %}
+                    
+        <div id="text-{{forloop.counter}}" class="our-command__profile-text">
+        
+            <div class="our-command__profile-text-inner">
+                <img src="{% static 'images/cancel.png' %}" alt="" class="our-command__profile-text-cancel">
+                {{ specialist.profile | safe }}
+            </div>
+        </div>
+
+        {% endfor %}
