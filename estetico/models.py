@@ -66,20 +66,20 @@ class Procedures(models.Model):
 class Special(models.Model):
 
     title = models.CharField(max_length=350, verbose_name='Название')
-    description = models.TextField(verbose_name='Описание')
+    
     slug = models.SlugField(verbose_name='URL')
-    testimony = models.TextField(verbose_name='Показания')
-    contraindications = models.TextField(verbose_name='Противопоказания')
+    spec = models.ForeignKey(Specialist, related_name='special', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Мнение специалиста')
     services = models.ForeignKey(Services, related_name='specials', verbose_name='Услуга', on_delete=models.CASCADE)
     procedure = models.ForeignKey(Procedures, related_name='specials_procedure', verbose_name='Процедура', on_delete=models.PROTECT)
-    specialist = models.ForeignKey(Specialist, related_name='specials_specialist', verbose_name='Мнение специалиста', on_delete=models.PROTECT)
+    
     price = models.CharField(max_length=200, verbose_name='Цена со скидкой', null=True, blank=True )
     sessions = models.CharField(max_length=150, verbose_name='Количество сеансов / процент скидки', null=True)
+    text = models.CharField(max_length=250, verbose_name='Текст под скидкой', null=True)
+    procent = models.BooleanField(null=True, default=False, verbose_name='Скидка в процентах')
     meta_title = models.CharField(max_length=350, verbose_name='Мета заголовок', blank=True, null=True)
     meta_description = models.CharField(max_length=500, verbose_name='Мета описание', blank=True, null=True)
     meta_keywords = models.CharField(max_length=500, verbose_name='Ключевые слова', blank=True, null=True)
-    text = models.CharField(max_length=250, verbose_name='Текст под скидкой', null=True)
-    procent = models.BooleanField(null=True, default=False, verbose_name='Скидка в процентах')
+    
 
     def get_image(self):
       album = self.images.all().first()

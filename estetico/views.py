@@ -56,6 +56,7 @@ def special_detail(request, slug):
         'special': Special.objects.get(slug=slug),
         'image': Special.objects.get(slug=slug).images.first(),
         'images': Special.objects.get(slug=slug).images.all()[1:],
+        
     }
 
     return render(request, 'estetico/special_view.html', context)
@@ -66,6 +67,7 @@ def services_detail(request, slug):
     context = {
 
         'service': Services.objects.get(slug=slug),
+        
         'image': Services.objects.get(slug=slug).images.first(),
         'images': Services.objects.get(slug=slug).images.all()[1:],
 

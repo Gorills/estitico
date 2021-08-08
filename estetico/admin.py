@@ -71,12 +71,7 @@ admin.site.register(Procedures, ProceduresAdmin)
 
 
 
-class SpecialAdminForm(forms.ModelForm):
-    testimony = forms.CharField(label='Показания', widget=CKEditorUploadingWidget())
-    contraindications = forms.CharField(label='Противопоказания', widget=CKEditorUploadingWidget())
-    class Meta:
-        model = Special
-        fields = '__all__'
+
 
 
 
@@ -93,7 +88,7 @@ class SpecialImageAdmin(admin.TabularInline):
 
 
 class SpecialAdmin(admin.ModelAdmin):
-    form = SpecialAdminForm
+ 
     list_display = ('title', )
     save_as = True
     save_on_top = True
