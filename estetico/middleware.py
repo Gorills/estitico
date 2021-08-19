@@ -1,5 +1,5 @@
 from django.utils.deprecation import MiddlewareMixin
-from .models import Services, Departments, Special
+from .models import Services, Departments, Special, Review
 from specialist.models import Specialist
 
 
@@ -44,4 +44,15 @@ class GetSpecialist(MiddlewareMixin):
         request.specialist_list = specialist_list
         
         print(request.specialist_list)
+        return None
+
+
+class GetReview(MiddlewareMixin):
+    def process_request(self, request):
+
+        review_list= Review.objects.all().order_by('-id')[:4]
+       
+        request.review_list = review_list
+        
+        print(request.review_list)
         return None

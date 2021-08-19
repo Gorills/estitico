@@ -123,3 +123,17 @@ class Departments(models.Model):
     class Meta:
         verbose_name = 'Филиал'
         verbose_name_plural = 'Филиалы'
+
+
+class Review(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Имя')
+    service = models.ForeignKey(Services, verbose_name='Услуга', related_name='review', on_delete=models.CASCADE)
+    text = models.TextField(verbose_name='Отзыв')
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta: 
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'

@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from .models import Services, Special, Departments
+from .models import Services, Special, Departments, Review
 from blog.models import Post
 
 
@@ -16,6 +16,7 @@ def home(request):
         'fifth': Services.objects.get(id=5),
         'sixth': Services.objects.get(id=6),
         'posts': Post.objects.all().order_by('-id')[:4],
+       
         
 
     }
@@ -79,7 +80,11 @@ def services_detail(request, slug):
 
 def review_list(request):
 
-    return render(request, 'estetico/review_list.html')
+    context = {
+        'reviews': Review.objects.all().order_by('-id')
+    }
+
+    return render(request, 'estetico/review_list.html', context)
 
 
 def privacy(request):

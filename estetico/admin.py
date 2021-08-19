@@ -3,7 +3,7 @@ from django.db import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 
-from .models import Services, ServicesImage, Procedures, Specialist, Special, SpecialImage, Departments
+from .models import Services, ServicesImage, Procedures, Specialist, Special, SpecialImage, Departments, Review
 # Register your models here.
 
 class ServicesAdminForm(forms.ModelForm):
@@ -101,3 +101,11 @@ class SpecialAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Special, SpecialAdmin)
+
+
+
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('name', )
+
+
+admin.site.register(Review, ReviewAdmin)
