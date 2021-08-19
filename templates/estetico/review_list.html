@@ -40,7 +40,7 @@
         <div class="review_list__inner">
 
 
-        {% for review in request.review_list %}
+        {% for review in reviews %}
             <div class="rewiew__item">
                 <p class="rewiew__name">{{ review.name }}</p>
                 <p class="rewiew__about">Отзыв о процедуре - <span class="rewiew__about--primary">{{ review.service.title }}</span></p>
