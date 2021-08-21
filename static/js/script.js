@@ -158,9 +158,9 @@ $('.rewiew__inner').slick({
   prevArrow: "<div class='arrow-wrap prev'><i class='fas fa-long-arrow-alt-left '></i></div>",
   nextArrow: "<div class='arrow-wrap next'><i class='fas fa-long-arrow-alt-right '></i></div>",
   responsive: [{
-    breakpoint: 1667,
+    breakpoint: 1668,
     settings: {
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       infinite: true
     }
